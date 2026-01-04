@@ -1,0 +1,134 @@
+---
+title: Managing Documentation in Looly
+description: Practical steps for organizing, editing, and maintaining your project docs.
+---
+
+## Overview
+
+Looly provides intuitive tools to manage your project's documentation. You create, organize, and share pages efficiently using folders, tags, and permissions. This guide walks you through key workflows.
+
+<Columns cols={3}>
+  <Card title="Edit Pages" icon="edit-3" href="#editing">
+    Format content with Markdown and components.
+  </Card>
+  <Card title="Organize Docs" icon="folder" href="#organizing">
+    Use folders and tags for structure.
+  </Card>
+  <Card title="Control Access" icon="shield" href="#permissions">
+    Set permissions and share securely.
+  </Card>
+</Columns>
+
+## Editing and Formatting Pages
+
+Edit pages directly in Looly's editor. You support Markdown, JSX components, and rich media.
+
+<Steps>
+  <Step title="Open a Page" icon="file-text">
+    Navigate to your documentation space and select a page.
+  </Step>
+  <Step title="Edit Content" icon="edit">
+    Click the edit button. Use the visual editor or switch to Markdown mode.
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    Preview in real-time. Add headings, lists, and components.
+  </Step>
+  <Step title="Publish" icon="upload">
+    Save and publish. Changes go live instantly.
+  </Step>
+</Steps>
+
+Enhance pages with code examples.
+
+<CodeGroup tabs="Markdown,JSX">
+  ```markdown
+  ## Heading
+
+  - List item
+  - Another item
+  ```
+  ```jsx
+  <Callout kind="info">
+    This is a callout.
+  </Callout>
+  ```
+</CodeGroup>
+
+## Organizing with Folders and Tags
+
+Structure your docs using folders for hierarchy and tags for cross-referencing.
+
+<Tabs>
+  <Tab title="Folders" icon="folder">
+    Create nested folders to mirror your project structure.
+
+    ```bash
+    docs/
+    ├── api/
+    │   └── endpoints.mdx
+    └── guides/
+        └── quickstart.mdx
+    ```
+
+    Folders appear in the sidebar navigation.
+  </Tab>
+  <Tab title="Tags" icon="tag">
+    Assign tags for filtering and search.
+
+    | Tag       | Purpose                  |
+    |-----------|--------------------------|
+    | `api`     | API reference pages     |
+    | `guide`   | User guides             |
+    | `changelog` | Version updates       |
+
+    Use tags like `{["api", "guide"]}` in frontmatter for metadata.
+  </Tab>
+</Tabs>
+
+## Setting Permissions and Sharing
+
+Control who views and edits your documentation.
+
+<Callout kind="alert">
+  Always review permissions before sharing public links to avoid exposing sensitive info.
+</Callout>
+
+Define roles in your space settings.
+
+| Role      | View | Edit | Admin |
+|-----------|------|------|-------|
+| Viewer    | ✅   | ❌   | ❌    |
+| Editor    | ✅   | ✅   | ❌    |
+| Admin     | ✅   | ✅   | ✅    |
+
+<Expandable title="Advanced Permissions" default-open="false">
+
+  For granular control, use workspace-level permissions.
+
+  ```yaml
+  permissions:
+    - role: editor
+      pages: ["api/*"]
+  ```
+
+</Expandable>
+
+## Importing External Content
+
+Bring in content from GitHub, Notion, or Markdown files.
+
+<Steps>
+  <Step title="Connect Source" icon="link">
+    Go to Import > GitHub. Authorize your repo.
+  </Step>
+  <Step title="Select Files" icon="git-pull-request">
+    Choose `docs/*.mdx` files.
+  </Step>
+  <Step title="Sync" icon="refresh-cw">
+    Import and set up auto-sync.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Test imports in a staging space first.
+</Callout>

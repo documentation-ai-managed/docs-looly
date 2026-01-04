@@ -1,0 +1,125 @@
+---
+title: Looly Changelog
+description: Review the history of updates, new features, and improvements in Looly.
+---
+
+## Changelog Overview
+
+Looly releases updates regularly to enhance your documentation experience. You review changes here to understand new capabilities, fixes, and any required actions for your projects. Check this page frequently or subscribe to notifications for the latest versions.
+
+<Callout kind="tip">
+  Enable notifications in your Looly dashboard at `https://dashboard.example.com/settings/notifications` to stay informed about new releases.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Latest Version" icon="zap" href="#v1-2-0">
+    v1.2.0 brings real-time collaboration and performance boosts.
+  </Card>
+  <Card title="Upgrade Guide" icon="rocket" href="#upgrading">
+    Follow simple steps to update your projects seamlessly.
+  </Card>
+  <Card title="Report Issues" icon="bug" href="https://github.com/looly/docs/issues" target="_blank">
+    Found a bug? Submit it on GitHub.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration: Multiple users now edit documents simultaneously with live cursors and conflict resolution.
+- Introduced version history rollback: Restore any previous document version with one click.
+
+## Improvements
+
+- Enhanced search performance: Queries now complete `<50ms` even for large documentation spaces.
+- Updated editor with syntax highlighting for 20+ languages, including MDX and Mermaid diagrams.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested code blocks in JSX components.
+- Resolved authentication token refresh errors during long editing sessions.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Custom domains support: Connect your own domain like `docs.yourcompany.com` to Looly spaces.
+- Webhook integrations: Trigger actions on document updates via `https://your-webhook-url.com/webhook`.
+
+## Bug Fixes
+
+- Patched security vulnerability in API key handling (CVE-2024-XXXX).
+- Corrected table alignment issues in responsive views.
+
+## Improvements
+
+- Faster page loads with optimized image handling and lazy loading.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation platform with MDX support, custom components, and YAML frontmatter parsing.
+- Full-text search across all projects.
+- API endpoints for programmatic access: `https://api.example.com/v1/docs`.
+
+## Breaking Changes
+
+- Updated authentication to use `{API_KEY}` headers instead of query params.
+
+</Update>
+
+## Upgrading Looly
+
+Follow these steps to upgrade your Looly installation or embedded projects. Always back up your data first.
+
+<Steps>
+  <Step title="Backup Data" icon="database">
+    Export your documentation spaces.
+
+````bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.example.com/v1/spaces/export \
+  -o backup.tar.gz
+````
+  </Step>
+  <Step title="Update Package" icon="package">
+    Install the latest version using your package manager.
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install looly@latest
+```
+
+```bash
+yarn add looly@latest
+```
+    </CodeGroup>
+  </Step>
+  <Step title="Run Migrations" icon="settings">
+    Execute database migrations if applicable.
+
+````bash
+npx looly migrate
+````
+  </Step>
+  <Step title="Restart Services" icon="refresh-cw">
+    Restart your Looly instance and verify at `https://dashboard.example.com`.
+  </Step>
+</Steps>
+
+<Callout kind="alert">
+  Review breaking changes in each release above. Test in a staging environment before production.
+</Callout>
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v1.2.0 | 2024-10-15 | Collaboration, performance  |
+| v1.1.0 | 2024-09-20 | Custom domains, webhooks    |
+| v1.0.0 | 2024-08-10 | Initial release, API basics |

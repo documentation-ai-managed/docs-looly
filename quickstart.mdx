@@ -1,0 +1,134 @@
+---
+title: Getting Started with Looly
+description: Set up your Looly account and create your first documentation space quickly.
+---
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+<Callout kind="info">
+
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: A team domain if creating a workspace for your organization
+
+</Callout>
+
+Looly works entirely in the browser, so no downloads or installations are required.
+
+## Step 1: Sign Up for Looly
+
+Follow these steps to create your account.
+
+<Steps>
+  <Step title="Visit the Sign-Up Page" icon="globe">
+    Navigate to [https://app.looly.com/signup](https://app.looly.com/signup).
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, full name, and a secure password. Alternatively, sign up with Google or GitHub.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification email from Looly and click the link to activate your account.
+  </Step>
+  <Step title="Complete Onboarding" icon="check-circle">
+    Answer a few quick questions about your use case to personalize your dashboard.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+
+After signing up, you'll land on your personalized dashboard. Bookmark [https://app.looly.com](https://app.looly.com) for quick access.
+
+</Callout>
+
+## Step 2: Create Your First Space
+
+Spaces organize your documentation projects.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select **New Space** in the top-right corner.
+  </Step>
+  <Step title="Name Your Space" icon="edit-3">
+    Enter a name like "Project Docs" and choose a visibility: Public, Private, or Team.
+  </Step>
+  <Step title="Customize Settings" icon="settings">
+    Add a description, icon, and color (default: #3B82F6). Click **Create**.
+  </Step>
+</Steps>
+
+Your new space appears in the sidebar. Click it to enter.
+
+## Explore the Dashboard
+
+Get familiar with key areas using this quick tour.
+
+<Columns cols={3}>
+  <Card title="Spaces Sidebar" icon="layout">
+    Manage all your documentation spaces here. Create, rename, or archive them easily.
+  </Card>
+  <Card title="Editor Canvas" icon="edit">
+    The main area for creating pages with rich text, embeds, and MDX components.
+  </Card>
+  <Card title="Publish Panel" icon="globe">
+    Preview and publish your docs to a custom URL like `docs.looly.com/your-space`.
+  </Card>
+</Columns>
+
+## Step 3: Create Your First Page
+
+Pages are the building blocks of your space.
+
+<Tabs>
+  <Tab title="Markdown Page" icon="file-text">
+    <Steps>
+      <Step title="New Page" icon="plus">
+        Inside your space, click **New Page**.
+      </Step>
+      <Step title="Add Content" icon="edit">
+        Type your title and content. Use markdown for formatting.
+      </Step>
+    </Steps>
+
+````markdown
+# Welcome to My Docs
+
+This is your first page!
+
+## Features
+
+- **Rich editing**
+- **Version history**
+- **Collaboration**
+````
+  </Tab>
+  <Tab title="MDX Page" icon="code">
+    Enable MDX in space settings for components like `<Callout>`.
+
+    ```tsx
+    import { Callout } from '@looly/components';
+
+    <Callout kind="success">
+      MDX powers interactive docs!
+    </Callout>
+    ```
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Invite Team Members" icon="users" href="#team-invite">
+    Share your space with collaborators.
+  </Card>
+  <Card title="Customize Themes" icon="palette" href="#themes">
+    Match your brand with custom colors and logos.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+
+Congratulations! You've set up Looly. Explore [advanced features](/configuration) or check the [full API docs](/authentication).
+
+</Callout>
